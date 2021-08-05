@@ -31,10 +31,14 @@ jobs:
     - name: Archive production artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: sharepoint
+        name: sharepoint/solution
         path: |
           sharepoint/solution
-        target: spfx-package
+          
+    - name: Download a single artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: sharepoint/solution
         
 #     - name: Get O365 CLI
 #       run: |
