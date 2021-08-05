@@ -28,18 +28,25 @@ jobs:
         gulp bundle --ship
         gulp package-solution --ship
         
-    - name: Get O365 CLI
-      run: |
-        npm install -g @pnp/office365-cli
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: sharepoint
+        path: |
+          sharepoint/solution
         
-    - name: Login
-      run: |
-        o365 login -t password -u ${{secrets.USERNAME}} -p ${{secrets.PASSWORD}}
+#     - name: Get O365 CLI
+#       run: |
+#         npm install -g @pnp/office365-cli
         
-    - name: Add
-      run: |
-        o365 spo app add -p ~/work/sharepointci/sharepointci/sharepoint/solution/SharePointCI.sppkg --overwrite
+#     - name: Login
+#       run: |
+#         o365 login -t password -u ${{secrets.USERNAME}} -p ${{secrets.PASSWORD}}
         
-    - name: Deploy
-      run: |
-        o365 spo app deploy --name SharePointCI.sppkg
+#     - name: Add
+#       run: |
+#         o365 spo app add -p ~/work/sharepointci/sharepointci/sharepoint/solution/SharePointCI.sppkg --overwrite
+        
+#     - name: Deploy
+#       run: |
+#         o365 spo app deploy --name SharePointCI.sppkg
