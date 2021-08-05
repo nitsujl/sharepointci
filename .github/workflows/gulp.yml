@@ -31,14 +31,14 @@ jobs:
     - name: Archive production artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: sharepoint/solution
+        name: solution
         path: |
           sharepoint/solution
           
     - name: Download a single artifact
       uses: actions/download-artifact@v2
       with:
-        name: sharepoint/solution
+        name: solution
         
 #     - name: Get O365 CLI
 #       run: |
