@@ -1,0 +1,22 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+      "name": "SharePointCI",
+      "id": "0fb07f42-96b5-48a1-a51b-82ade8edd1cc",
+      "version": "1.0.0.0",
+      "includeClientSideAssets": true,
+      "skipFeatureDeployment": true,
+      "isDomainIsolated": false,
+      "developer": {
+        "name": "",
+        "websiteUrl": "",
+        "privacyUrl": "",
+        "termsOfUseUrl": "",
+        "mpnId": ""
+      }
+    },
+    "paths": {
+      "zippedPackage": "solution/SharePointCI.sppkg"
+    }
+  }
+  
