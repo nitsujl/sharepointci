@@ -35,18 +35,18 @@ jobs:
         path: |
           sharepoint/solution
         
-#     - name: Get O365 CLI
-#       run: |
-#         npm install -g @pnp/office365-cli
+    - name: Get O365 CLI
+      run: |
+        npm install -g @pnp/office365-cli
         
-#     - name: Login
-#       run: |
-#         o365 login -t password -u ${{secrets.USERNAME}} -p ${{secrets.PASSWORD}}
+    - name: Login
+      run: |
+        o365 login -t password -u ${{secrets.USERNAME}} -p ${{secrets.PASSWORD}}
         
-#     - name: Add
-#       run: |
-#         o365 spo app add -p ~/work/sharepointci/sharepointci/sharepoint/solution/SharePointCI.sppkg --overwrite
+    - name: Add
+      run: |
+        o365 spo app add -p ./sharepoint/SharePointCI.sppkg --overwrite
         
-#     - name: Deploy
-#       run: |
-#         o365 spo app deploy --name SharePointCI.sppkg
+    - name: Deploy
+      run: |
+        o365 spo app deploy --name SharePointCI.sppkg
