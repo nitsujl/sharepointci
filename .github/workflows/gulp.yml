@@ -22,11 +22,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-#     - name: Build
-#       run: |
-#         npm install
-#         gulp bundle --ship
-#         gulp package-solution --ship
+    - name: Build
+      run: |
+        npm install
+        gulp bundle --ship
+        gulp package-solution --ship
         
     - name: Get O365 CLI
       run: |
@@ -35,3 +35,7 @@ jobs:
     - name: Login
       run: |
         o365 login -t password -u ${{secrets.USERNAME}} -p ${{secrets.PASSWORD}}
+        o365 spo app add -p ${GITHUB_WORKSPACE}/sharepoint/solution/SharePointCI.sppkg --overwrite
+        o365 spo app deploy --name SharePointCI.sppkg
+        
+      
