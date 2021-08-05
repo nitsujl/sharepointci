@@ -35,7 +35,7 @@ jobs:
     - name: Login
       run: |
         o365 login -t password -u ${{secrets.USERNAME}} -p ${{secrets.PASSWORD}}
-        o365 spo app add -p ${GITHUB_WORKSPACE}/sharepoint/solution/SharePointCI.sppkg --overwrite
+        o365 spo app add -p "./sharepoint/solution/SharePointCI.sppkg" --overwrite
         o365 spo app deploy --name SharePointCI.sppkg
         
       
