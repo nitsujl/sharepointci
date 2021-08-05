@@ -34,4 +34,4 @@ jobs:
         
     - name: Login
       run: |
-        o365 login -t password -u ${{ env.USERNAME }} -p ${{ env.PASSWORD }}
+        o365 login -t password -u ${{secrets.USERNAME}} -p ${{secrets.PASSWORD}}
