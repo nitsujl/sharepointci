@@ -45,7 +45,7 @@ jobs:
         
     - name: Add
       run: |
-        o365 spo app add -p ./sharepoint/SharePointCI.sppkg --overwrite
+        o365 spo app add -p ./sharepoint/solution/SharePointCI.sppkg --overwrite
         
     - name: Deploy
       run: |
